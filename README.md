@@ -1,5 +1,3 @@
-# automated-java-deployment-eks
-CI/CD Pipeline for Java Application on EKS with Jenkins, SonarQube, Trivy, and ArgoCD
 # Automated Java Deployment on EKS with Jenkins, SonarQube, Trivy, and ArgoCD
 
 This repository contains the setup and configuration guide for building a Continuous Integration/Continuous Deployment (CI/CD) pipeline for Java applications deployed on an Amazon Elastic Kubernetes Service (EKS) cluster using Jenkins. The pipeline includes integration with SonarQube for static code analysis, Dockerizing the application, scanning Docker images using Trivy, updating build numbers in manifests, and deploying to the EKS cluster through ArgoCD.
