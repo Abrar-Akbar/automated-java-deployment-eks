@@ -5,6 +5,9 @@ This repository contains the setup and configuration guide for building a Contin
 ## Project Description
 
 Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes cluster using Jenkins is a complex and multi-step process. In this guide, we'll walk through each step in detail, from installing and configuring the necessary tools to deploying the application on Kubernetes. We will also discuss the integration of Jenkins with SonarQube for static code analysis, Dockerizing the application, scanning Docker images using Trivy, then updating build numbers in the manifest and deploying it on the EKS cluster through ArgoCD.
+Workflow Diagram
+
+![image](https://github.com/Abrar-Akbar/automated-java-deployment-eks/assets/62903208/21356ed5-bf96-4640-aa23-0aebd2c53ce3)
 
 ## Requirements
 
