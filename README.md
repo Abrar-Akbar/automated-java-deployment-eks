@@ -20,8 +20,8 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 - Security Group: Create a new group with open All traffic (Not recommended in Prod environment, for practice only)
 - Default VPC, RAM 15GB
 
-**CI Job Code:** [GitHub Repository](https://github.com/sagarkulkarni1989/register-app.git)
-**K8s Manifests:** [GitHub Repository](https://github.com/sagarkulkarni1989/gitops-register-app)
+**CI Job Code:** [GitHub Repository](https://github.com/)
+**K8s Manifests:** [GitHub Repository](https://github.com/)
 
 ## Setup and Configuration
 
@@ -37,7 +37,7 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 1. Update packages and install OpenJDK 17.
 2. Install Docker.
 3. Configure SSH.
-4. Open Jenkins UI, copy initial password, and install suggested plugins.
+4. Open Jenkins UI, copy initial password and install suggested plugins.
 5. Manage Jenkins -> Nodes -> Create a new node.
 
 ### Integrate Maven to Jenkins and Add GitHub Credentials
@@ -60,7 +60,7 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 ### Setup Kubernetes using eksctl (On Bootstrap server)
 
 1. Install AWS CLI, kubectl, and eksctl.
-2. Create IAM Role and assign it to the Bootstrap server.
+2. Create an IAM Role and assign it to the Bootstrap server.
 3. Create a cluster.
 
 ### ArgoCD Installation on EKS Cluster and Add EKS Cluster to ArgoCD
@@ -72,7 +72,7 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 
 ### Configure ArgoCD to Deploy Pods on EKS and Automate ArgoCD Deployment Job using GitOps GitHub Repository
 
-1. Connect Git repository to ArgoCD.
+1. Connect the Git repository to ArgoCD.
 2. Create an application in ArgoCD.
 3. Access the application.
 4. Create a Jenkins CD Job.
@@ -83,7 +83,3 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 - Ensure all prerequisites are met before proceeding with the installation.
 - For deployment, trigger the Jenkins CI/CD jobs either manually or remotely using the provided authentication token.
 - Monitor the CI/CD pipeline progress through the Jenkins UI and ArgoCD dashboard.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
