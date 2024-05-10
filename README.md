@@ -75,9 +75,15 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 ...bash
  sh run_sonarqube.sh
    ...
-5. fgfxdg
-6. xgxg
-7. xg
+5. Login to sonarqube UI — <Server_public_IP>:9000
+6. default credentials: admin/admin -> Go to my account- security — Generate Token — Name: Jenkins sonarqube-token Type: Global analysis token -> Jenkins — manage Jenkins- credentials
+7. kind: Secret text -> scope: global -> secret : copy token which is generated in sonarqube-token -> ID: jenkins-sonarqube-token
+8. Manage Jenkins — system — SonarQube servers- SonarQube installations -> Name: sonarqube-server -> Server URL: -> credentials: token
+9. apply and save
+10. Manage Jenkins -> Tools -> SonarQube Scanner installations -> Add SonarQube Scanner -> name: sonarqube-scanner -> tick on — install automatically -> version: sonarqube scanner 5.0.1.3006
+11. apply and save
+12. Add sonarqube webhook configuration -> Sonarqube -> Administration -> configuration -> webhooks -> create name : sonarqube-webhook
+13. URL: http://<Jenkins_master_private_IP>:8080/sonarqube-webhook/
 
 ### Build and Push Docker Image using Pipeline Script
 
