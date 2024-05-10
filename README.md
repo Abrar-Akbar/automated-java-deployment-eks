@@ -42,6 +42,7 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 2. Install Docker.
 3. Configure SSH.
 4. Open Jenkins UI, copy initial password and install suggested plugins.
+
 ### Master/Slave configuration
 1. Manage Jenkins -> Nodes -> Create a new node -> Number of executors 2
 2. Remote root directory: /root/jenkins1 (Any path added but first need to create this dir)
@@ -51,10 +52,13 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 6. Credentials: add Jenkins (As per your need)
 7. Host Key Verification Strategy: non verifying 
 
-### Integrate Maven to Jenkins and Add GitHub Credentials
+### Integrate Maven, and JDK installations to Jenkins and Add GitHub Credentials
 
 1. Manage Jenkins -> Tools -> Maven installations.
-2. Manage Jenkins -> Credentials -> Add GitHub credentials.
+2. Name: Maven3, Version: Any choose Install automatically
+3. Name: Java17, Install from adoptium.net — Version: Any
+4. Manage Jenkins -> Credentials -> Add GitHub credentials
+5. kind: Username with password -> Scope: Global -> Username: GitHub username -> password: GitHub password -> id: GitHub
 
 ### Install and Configure SonarQube
 
