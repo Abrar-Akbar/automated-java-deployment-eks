@@ -47,9 +47,9 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
  ```bash
    sh install_docker.sh
    ```
-...bash
+```bash
    sh install_trivy.sh
-   ...
+   ```
    
 ### Master/Slave configuration
 1. Manage Jenkins -> Nodes -> Create a new node -> Number of executors 2
