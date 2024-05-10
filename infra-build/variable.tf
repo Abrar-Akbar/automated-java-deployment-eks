@@ -1,3 +1,7 @@
+variable "aws_region" {
+  description = "Name of the AWS region"
+  type        = string
+}
 variable "key_pair_name" {
   description = "Name of the key pair"
   type        = string

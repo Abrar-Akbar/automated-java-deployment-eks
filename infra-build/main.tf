@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = var.aws_region
 }
 
 # Create VPC
@@ -143,8 +143,14 @@ resource "aws_security_group" "automated_security_group" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  # Nginx proxy manager server port
+  ingress {
+    from_port   = 81
+    to_port     = 81
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 }
-
 # Create EC2 instances
 resource "aws_instance" "automated_master" {
   ami                         = var.ami_id
@@ -152,6 +158,7 @@ resource "aws_instance" "automated_master" {
   subnet_id                   = aws_subnet.public_subnet.id
   key_name                    = var.key_pair_name
   associate_public_ip_address = true
+  private_ip                  = "172.16.26.101"
   vpc_security_group_ids      = [aws_security_group.automated_security_group.id]
   root_block_device {
     volume_size           = var.root_volume_size
@@ -170,6 +177,7 @@ resource "aws_instance" "automated_agent" {
   subnet_id                   = aws_subnet.public_subnet.id
   key_name                    = var.key_pair_name
   associate_public_ip_address = true
+  private_ip                  = "172.16.26.111"
   vpc_security_group_ids      = [aws_security_group.automated_security_group.id]
   root_block_device {
     volume_size           = var.root_volume_size
@@ -188,6 +196,7 @@ resource "aws_instance" "automated_bootstrap" {
   subnet_id                   = aws_subnet.public_subnet.id
   key_name                    = var.key_pair_name
   associate_public_ip_address = true
+  private_ip                  = "172.16.26.112"
   vpc_security_group_ids      = [aws_security_group.automated_security_group.id]
   root_block_device {
     volume_size           = var.root_volume_size
