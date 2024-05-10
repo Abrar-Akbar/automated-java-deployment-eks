@@ -14,9 +14,9 @@ resource "aws_vpc" "automated_vpc" {
 
 # Create private subnet
 resource "aws_subnet" "private_subnet" {
-  vpc_id            = aws_vpc.automated_vpc.id
-  cidr_block        = "172.16.25.0/24"
-  availability_zone = "us-east-1b" # Change as needed
+  vpc_id                  = aws_vpc.automated_vpc.id
+  cidr_block              = "172.16.25.0/24"
+  availability_zone       = "us-east-1b" # Change as needed
   map_public_ip_on_launch = false
   tags = {
     Name = "automated Private Subnet"
@@ -25,9 +25,9 @@ resource "aws_subnet" "private_subnet" {
 
 # Create public subnet
 resource "aws_subnet" "public_subnet" {
-  vpc_id            = aws_vpc.automated_vpc.id
-  cidr_block        = "172.16.26.0/24"
-  availability_zone = "us-east-1b" # Change as needed
+  vpc_id                  = aws_vpc.automated_vpc.id
+  cidr_block              = "172.16.26.0/24"
+  availability_zone       = "us-east-1b" # Change as needed
   map_public_ip_on_launch = true
   tags = {
     Name = "automated Public Subnet"
@@ -82,10 +82,10 @@ resource "aws_security_group" "automated_security_group" {
 
   # Allow outbound traffic to specific destinations
   egress {
-    from_port       = 0
-    to_port         = 0
-    protocol        = "-1"
-    cidr_blocks    = ["0.0.0.0/0"]
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   # SSH for communication
