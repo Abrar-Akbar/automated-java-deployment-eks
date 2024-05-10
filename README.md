@@ -35,14 +35,22 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 2. Install Jenkins.
 3. Configure SSH.
 4. Generate SSH key and copy to Agent machine.
-
+  ```bash
+   sh install_jenkins.sh
+   ```
 ### Jenkins Agent Machine
 
 1. Update packages and install OpenJDK 17.
 2. Install Docker.
 3. Configure SSH.
 4. Open Jenkins UI, copy initial password and install suggested plugins.
-
+ ```bash
+   sh install_docker.sh
+   ```
+...bash
+   sh install_trivy.sh
+   ...
+   
 ### Master/Slave configuration
 1. Manage Jenkins -> Nodes -> Create a new node -> Number of executors 2
 2. Remote root directory: /root/jenkins1 (Any path added but first need to create this dir)
@@ -65,7 +73,9 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 1. Install Docker.
 2. Run SonarQube container.
 3. Integrate SonarQube with Jenkins.
-
+...bash
+   sh run_sonarqube.sh
+   ...
 ### Build and Push Docker Image using Pipeline Script
 
 1. Add Docker Hub credentials.
