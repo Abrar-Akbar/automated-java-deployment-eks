@@ -10,6 +10,8 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 
 ![image](https://github.com/Abrar-Akbar/automated-java-deployment-eks/assets/62903208/21356ed5-bf96-4640-aa23-0aebd2c53ce3)
 
+### Build AWS Infrastructure
+- Using terraform
 ## Requirements
 
 ### CI/CD Pipeline System
