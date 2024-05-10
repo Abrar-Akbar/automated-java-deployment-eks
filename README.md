@@ -12,6 +12,9 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 
 ### Build AWS Infrastructure
 - Using terraform
+  ```bash
+   cd infra-build , terraform init, terraform plan, terraform apply
+   ```
 ## Requirements
 
 ### CI/CD Pipeline System
