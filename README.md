@@ -20,9 +20,9 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
   - Jenkins Master
   - Jenkins Agent
   - EKS Bootstrap server
-- Instance types: T2 Micro for Jenkins master and EKS Bootstrap server, T2.medium for Agent
+- Instance types: T2 Micro for Jenkins master and EKS Bootstrap server, T3.medium for Agent
 - Security Group: Create a new group with open All traffic (Not recommended in Prod environment, for practice only)
-- Default VPC, RAM 15GB
+- Default VPC, RAM 20GB
 
 **CI Job Code:** [GitHub Repository](https://github.com/)
 **K8s Manifests:** [GitHub Repository](https://github.com/)
@@ -42,7 +42,14 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 2. Install Docker.
 3. Configure SSH.
 4. Open Jenkins UI, copy initial password and install suggested plugins.
-5. Manage Jenkins -> Nodes -> Create a new node.
+### Master/Slave configuration
+1. Manage Jenkins -> Nodes -> Create a new node -> Number of executors 2
+2. Remote root directory: /root/jenkins1 (Any path added but first need to create this dir)
+3. Usage: Use this node as much as possible
+4. Launch Method: Launch agents via SSH
+5. Host: Jenkins-Agent private IP
+6. Credentials: add Jenkins (As per your need)
+7. Host Key Verification Strategy: non verifying 
 
 ### Integrate Maven to Jenkins and Add GitHub Credentials
 
