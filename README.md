@@ -56,6 +56,7 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
  sh install_trivy.sh
    ```
 ### Master/Slave configuration
+
 1. Manage Jenkins -> Nodes -> Create a new node -> Number of executors 2
 2. Remote root directory: /root/jenkins1 (Any path added but first need to create this dir)
 3. Usage: Use this node as much as possible
@@ -85,10 +86,11 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 7. kind: Secret text -> scope: global -> secret : copy token which is generated in sonarqube-token -> ID: jenkins-sonarqube-token
 8. Manage Jenkins — system — SonarQube servers- SonarQube installations -> Name: sonarqube-server -> Server URL: -> credentials: token
 9. apply and save
-10. Manage Jenkins -> Tools -> SonarQube Scanner installations -> Add SonarQube Scanner -> name: sonarqube-scanner -> tick on -> install automatically -> version: sonarqube scanner 5.0.1.3006
-11. apply and save
-12. Add sonarqube webhook configuration -> Sonarqube -> Administration -> configuration -> webhooks -> create name : sonarqube-webhook
-13. URL: http://<Jenkins_master_private_IP>:8080/sonarqube-webhook/
+10. Manage Jenkins -> Plugins -> Available Plugins -> SonarQube Scanner -> Install
+11. Manage Jenkins -> Tools -> SonarQube Scanner installations -> Add SonarQube Scanner -> name: sonarqube-scanner -> tick on -> install automatically -> version: sonarqube scanner 5.0.1.3006
+12. apply and save
+13. Add sonarqube webhook configuration -> Sonarqube -> Administration -> configuration -> webhooks -> create name : sonarqube-webhook
+14. URL: http://<Jenkins_master_private_IP>:8080/sonarqube-webhook/
 
 ### Build and Push Docker Image using Pipeline Script
 
