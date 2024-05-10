@@ -45,10 +45,10 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 3. Configure SSH.
 4. Open Jenkins UI, copy initial password and install suggested plugins.
  ```bash
-   sh install_docker.sh
+  sh install_docker.sh
    ```
 ```bash
-   sh install_trivy.sh
+ sh install_trivy.sh
    ```
    
 ### Master/Slave configuration
@@ -74,7 +74,7 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 2. Run SonarQube container.
 3. Integrate SonarQube with Jenkins.
 ...bash
-   sh run_sonarqube.sh
+ sh run_sonarqube.sh
    ...
 ### Build and Push Docker Image using Pipeline Script
 
