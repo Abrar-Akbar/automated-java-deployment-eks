@@ -29,7 +29,7 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 - Security Group: Create a new group with open All traffic (Not recommended in Prod environment, for practice only)
 - Default VPC, RAM 20GB
 
-**CI Job Code:** [GitHub Repository](https://github.com/)
+**CI Job Code:** [GitHub Repository](https://github.com/Abrar-Akbar/gitops-register-app-java.git)
 **K8s Manifests:** [GitHub Repository](https://github.com/)
 
 ## Setup and Configuration
@@ -99,7 +99,9 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 3. Go to Jenkins -> User login -> configure -> API Token -> JENKINS_API_TOKEN
 4. Manage Jenkins -> credentials -> Kind: secret text -> Secret: provide token -> ID and description: JENKINS_API_TOKEN -> Save it
 5. Create a CI job with a pipeline script from SCM.
-6. 
+  ```bash
+   https://github.com/Abrar-Akbar/gitops-register-app-java.git
+   ```
 
 ### Setup Kubernetes using eksctl (On Bootstrap server)
 
