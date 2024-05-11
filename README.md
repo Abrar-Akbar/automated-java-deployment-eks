@@ -96,7 +96,9 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 
 1. Add Docker Hub credentials.
 2. Create Jenkins API Token.
-3. Create a CI job with a pipeline script from SCM.
+3. Go to Jenkins -> User login -> configure -> API Token -> JENKINS_API_TOKEN
+4. Manage Jenkins -> credentials -> Kind: secret text -> Secret: provide token -> ID and description: JENKINS_API_TOKEN -> Save it
+5. Create a CI job with a pipeline script from SCM.
 
 ### Setup Kubernetes using eksctl (On Bootstrap server)
 
