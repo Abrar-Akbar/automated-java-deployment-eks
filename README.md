@@ -30,7 +30,6 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 - Default VPC, RAM 20GB
 
 **CI Job Code:** [GitHub Repository](https://github.com/Abrar-Akbar/gitops-register-app-java.git)
-**K8s Manifests:** [GitHub Repository](https://github.com/)
 
 ## Setup and Configuration
 
