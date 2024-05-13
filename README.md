@@ -77,9 +77,9 @@ Creating a CI/CD pipeline for a Java application to deploy on a Kubernetes clust
 1. Install Docker.
 2. Run SonarQube container.
 3. Integrate SonarQube with Jenkins.
-...bash
+```bash
  sh run_sonarqube.sh
-   ...
+  ```
 5. Login to sonarqube UI — <Server_public_IP>:9000
 6. default credentials: admin/admin -> Go to my account- security — Generate Token — Name: Jenkins sonarqube-token Type: Global analysis token -> Jenkins -> manage Jenkins -> credentials
 7. kind: Secret text -> scope: global -> secret : copy token which is generated in sonarqube-token -> ID: jenkins-sonarqube-token
