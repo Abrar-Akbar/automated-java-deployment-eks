@@ -1,2 +1,3 @@
+## These files are ignore to push to GitHub ########
 .terraform.lock.hclf
 .terraform
