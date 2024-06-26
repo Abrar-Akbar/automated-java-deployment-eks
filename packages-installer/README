@@ -1,0 +1,4 @@
+
+sudo chmod +x install_jenkins.sh install_docker.sh
+./install_jenkins.sh
+./install_docker.sh
